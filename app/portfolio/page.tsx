@@ -62,7 +62,8 @@ const sector_categories: Categories[] = [
 ];
 
 // Add this category mapping object
-const categoryMapping = {
+type CategoryGroup = { text: string; includes: string[] };
+const categoryMapping: { [key: string]: CategoryGroup } = {
   "11": {
     // Commercial ID
     text: "Commercial",
@@ -133,13 +134,13 @@ const Portfolio = () => {
 
           if (groupedCategory) {
             // If it's a grouped category, check if the category title is in the includes array
-            return groupedCategory.includes.includes(cat.title);
+            return groupedCategory.includes.includes(cat.text);
           } else {
             // For non-grouped categories, use the original logic
             const sectorCategory = sector_categories.find(
               (sc) => sc.id === activeSector
             );
-            return sectorCategory && cat.title === sectorCategory.text;
+            return sectorCategory && cat.text === sectorCategory.text;
           }
         })
       );
@@ -266,7 +267,7 @@ const Portfolio = () => {
                                           fontWeight: "500",
                                         }}
                                       >
-                                        {category.title}
+                                        {category.text}
                                       </span>
                                     ))}
                               </div>
