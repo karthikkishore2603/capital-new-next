@@ -207,7 +207,7 @@ const Blog = () => {
 
                   <div className="px-6 pb-6">
                     <Link
-                      href={`/newsroom/blog/${post.slug}`}
+                      href={`/newsroom/blog-details/${post.slug}`}
                       className="text-[#211574] font-medium hover:underline"
                     >
                       Read more
