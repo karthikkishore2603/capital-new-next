@@ -61,7 +61,7 @@ const Railways = () => {
       area: project.area || "",
       completion: project.completion || "",
     },
-    slug: project.slug,
+    slug: typeof project.slug === "string" ? project.slug : project.slug.current,
   }));
 
   return (

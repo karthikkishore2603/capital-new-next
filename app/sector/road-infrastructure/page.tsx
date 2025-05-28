@@ -61,7 +61,7 @@ const RoadsAndInfrastructure = () => {
       area: project.area || "",
       completion: project.completion || "",
     },
-    slug: project.slug,
+    slug: project.slug.current,
   }));
 
   return (
