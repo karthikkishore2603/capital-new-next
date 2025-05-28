@@ -10,8 +10,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
+import Link from "next/link";
 const CEOLetter = () => {
   // Company milestones data
   const milestones = [
@@ -83,7 +83,7 @@ const CEOLetter = () => {
                   {/* Add link to detail page */}
                   <div className="mt-6">
                     <Button className="bg-[#211574] hover:bg-[#211574]/80">
-                      <Link to="/newsroom/ceo-letter/1">Read Full Letter</Link>
+                      <Link href="/newsroom/ceo-letter/1">Read Full Letter</Link>
                     </Button>
                   </div>
                 </div>
