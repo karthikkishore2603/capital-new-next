@@ -3,13 +3,41 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
+import dynamic from 'next/dynamic';
+
+interface CarouselProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+interface CarouselContentProps {
+  children: React.ReactNode;
+}
+
+interface CarouselItemProps {
+  children: React.ReactNode;
+  className?: string;
+  key?: React.Key;
+}
+
+interface CarouselButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+}
+
+const Carousel = dynamic<CarouselProps>(() => import('@/components/ui/carousel').then(mod => mod.Carousel), { ssr: false });
+const CarouselContent = dynamic<CarouselContentProps>(() => import('@/components/ui/carousel').then(mod => mod.CarouselContent), { ssr: false });
+const CarouselItem = dynamic(() => import('@/components/ui/carousel').then(mod => mod.CarouselItem), { ssr: false });
+const CarouselNext = dynamic<CarouselButtonProps>(() => import('@/components/ui/carousel').then(mod => mod.CarouselNext), { ssr: false });
+const CarouselPrevious = dynamic<CarouselButtonProps>(() => import('@/components/ui/carousel').then(mod => mod.CarouselPrevious), { ssr: false });
+
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from "@/components/ui/carousel";
 // import { Link } from "react-router-dom";
 import Link from "next/link";
 const CEOLetter = () => {
