@@ -65,6 +65,16 @@ async function getProject(slug: string) {
   }
 }
 
+export async function generateStaticParams() {
+  const query = `*[_type == "post"]{ "slug": slug.current }`;
+  const posts = await client1.fetch(query);
+
+  return posts.map((post: { slug: string }) => ({
+    slug: post.slug,
+  }));
+}
+
+
 export default async function PortfolioDetail({
   params,
 }: {
