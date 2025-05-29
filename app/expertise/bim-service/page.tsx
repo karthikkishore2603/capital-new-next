@@ -117,8 +117,8 @@ const BimService = () => {
                 className="flex flex-col items-center"
               >
                 <Building className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">500+</h3>
-                <p className="text-gray-600">BIM Projects Delivered</p>
+                <h3 className="text-2xl font-bold">7200+</h3>
+                <p className="text-gray-600">Projects Delivered</p>
               </motion.div>
 
               <motion.div
@@ -128,9 +128,9 @@ const BimService = () => {
                 transition={{ delay: 0.2 }}
                 className="flex flex-col items-center"
               >
-                <Shield className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">15+</h3>
-                <p className="text-gray-600">Years of BIM Excellence</p>
+                <Globe className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-2xl font-bold">20+</h3>
+                <p className="text-gray-600">Years of Experience</p>
               </motion.div>
 
               <motion.div
@@ -140,16 +140,15 @@ const BimService = () => {
                 transition={{ delay: 0.3 }}
                 className="flex flex-col items-center"
               >
-                <Leaf className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">30%</h3>
-                <p className="text-gray-600">Average Cost Reduction</p>
+                <HandshakeIcon className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-2xl font-bold">500+</h3>
+                <p className="text-gray-600">Expert Engineers</p>
               </motion.div>
             </div>
 
             <p className="text-center mt-8 text-gray-600">
-              Delivering cutting-edge BIM solutions across the MENA region,
-              Europe, and Asia with a focus on innovation, collaboration, and
-              technical excellence.
+              Trusted by developers, ministries, and global brands across 3
+              continents.
             </p>
           </div>
         </section>

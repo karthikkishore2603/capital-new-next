@@ -105,52 +105,52 @@ const StructuralEngineerings = () => {
         </section>
 
         {/* Credibility Snapshot */}
-        <section className="py-16 bg-white">
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="flex flex-col items-center"
-              >
-                <Building className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">2,500+</h3>
-                <p className="text-gray-600">Structural Projects</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-col items-center"
-              >
-                <Globe className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">15+</h3>
-                <p className="text-gray-600">Countries Served</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex flex-col items-center"
-              >
-                <HandshakeIcon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">950+</h3>
-                <p className="text-gray-600">Satisfied Clients</p>
-              </motion.div>
+    <section className="py-16 bg-white">
+            <div className="container">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="flex flex-col items-center"
+                >
+                  <Building className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="text-2xl font-bold">7200+</h3>
+                  <p className="text-gray-600">Projects Delivered</p>
+                </motion.div>
+  
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="flex flex-col items-center"
+                >
+                  <Globe className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="text-2xl font-bold">20+</h3>
+                  <p className="text-gray-600">Years of Experience</p>
+                </motion.div>
+  
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="flex flex-col items-center"
+                >
+                  <HandshakeIcon className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="text-2xl font-bold">500+</h3>
+                  <p className="text-gray-600">Expert Engineers</p>
+                </motion.div>
+              </div>
+  
+              <p className="text-center mt-8 text-gray-600">
+                Trusted by developers, ministries, and global brands across 3
+                continents.
+              </p>
             </div>
-
-            <p className="text-center mt-8 text-gray-600">
-              Trusted by developers, architects, and government entities across
-              the MENA region, Europe, and Asia.
-            </p>
-          </div>
-        </section>
+          </section>
 
         {/* Signature Work */}
         <section className="py-20 bg-white">

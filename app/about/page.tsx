@@ -75,7 +75,9 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Engineering Legacy.
                 <br />
-                Building the Future.
+                <span style={{ color: "#211574", fontWeight: "bold" }}>
+                  Building the Future.
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700">
                 Capital Engineering Consultancy is a multi-disciplinary firm
@@ -90,13 +92,13 @@ const About = () => {
         <section className="section">
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-              <MetricCard number="17+" label="Years of Experience" />
+              <MetricCard number="20+" label="Years of Experience" />
               <MetricCard number="7,200+" label="Projects Completed" />
-              <MetricCard number="192+" label="Happy Clients" />
-              <MetricCard number="8,500+" label="People Served" />
+              <MetricCard number="500+" label="Expert Engineers" />
+              <MetricCard number="10+" label="Industries" />
             </div>
             <p className="text-center mt-10 text-gray-600">
-              Serving over 8,500 people with engineering excellence and trust.
+              Delivering engineering excellence across multiple industries.
             </p>
           </div>
         </section>
@@ -138,34 +140,34 @@ const About = () => {
               <PhilosophyCard
                 title="Collaboration as the Cornerstone"
                 description="We foster teamwork and knowledge sharing to drive innovation."
-                icon={<Users className="h-8 w-8 text-primary" />}
+                icon={<Users className="h-8 w-8 text-[#211574]" />}
               />
 
               <PhilosophyCard
                 title="Client-Centric Approach"
                 description="We build lasting relationships by understanding client needs."
-                icon={<MessageCircle className="h-8 w-8 text-primary" />}
+                icon={<MessageCircle className="h-8 w-8 text-[#211574]" />}
               />
 
               <PhilosophyCard
                 title="Adaptability and Agility"
                 description="Embracing change ensures efficient project execution."
-                icon={<Award className="h-8 w-8 text-primary" />}
+                icon={<Award className="h-8 w-8 text-[#211574]" />}
               />
 
               <PhilosophyCard
                 title="Beyond Technical Excellence"
                 description="We excel in communication, problem-solving, and project delivery."
-                icon={<Globe className="h-8 w-8 text-primary" />}
+                icon={<Globe className="h-8 w-8 text-[#211574]" />}
               />
 
               <PhilosophyCard
                 title="A Culture of Excellence"
                 description="We care deeply about results and relationships."
-                icon={<Award className="h-8 w-8 text-primary" />}
+                icon={<Award className="h-8 w-8 text-[#211574]" />}
               />
 
-              <div className="bg-primary text-white p-8 rounded-md flex flex-col justify-center">
+              <div className="bg-[#211574] text-white p-8 rounded-md flex flex-col justify-center">
                 <h3 className="text-xl font-bold mb-4">Our Expert Team</h3>
                 <p className="opacity-90">
                   Our expert team, client focus, and innovation shape a better
@@ -286,7 +288,7 @@ const About = () => {
               <div className="md:w-1/2">
                 <div className="rounded-md overflow-hidden">
                   <img
-                    src="/about/team.png"
+                    src="/about/our-people.JPG"
                     alt="Capital Engineering Consultancy Team"
                     className="w-full h-full object-cover"
                   />
@@ -367,7 +369,6 @@ const About = () => {
           </div>
         </section>
 
-
         <ContactCTA />
       </main>
       <Footer />
@@ -377,7 +378,7 @@ const About = () => {
 
 const MetricCard = ({ number, label }: { number: string; label: string }) => (
   <div className="text-center p-6 bg-white rounded-md shadow-sm">
-    <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">
+    <div className="text-4xl lg:text-5xl font-bold text-[#211574] mb-2">
       {number}
     </div>
     <div className="text-gray-600">{label}</div>
@@ -402,7 +403,7 @@ const PhilosophyCard = ({
 
 const AwardBadge = ({ name }: { name: string }) => (
   <div className="bg-white p-6 rounded-md shadow-sm flex flex-col items-center justify-center text-center">
-    <Award className="h-10 w-10 text-primary mb-3" />
+    <Award className="h-10 w-10 text-[#211574] mb-3" />
     <span className="font-medium">{name}</span>
   </div>
 );
@@ -416,7 +417,7 @@ const TeamMember = ({ name, title }: { name: string; title: string }) => (
       <h3 className="font-bold">{name}</h3>
       <p className="text-gray-600 text-sm">{title}</p>
     </div>
-    <div className="absolute inset-0 bg-primary bg-opacity-90 text-white p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <div className="absolute inset-0 bg-[#211574] bg-opacity-90 text-white p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <h3 className="font-bold mb-2">{name}</h3>
       <p className="text-sm">{title}</p>
       <p className="text-xs mt-2 opacity-80">

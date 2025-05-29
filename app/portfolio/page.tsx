@@ -29,7 +29,15 @@ import {
 import Link from "next/link";
 import { client1, urlForClient1 } from "../../lib/sanity";
 
+// Separate type for Sanity categories
 type Categories = {
+  _id: string;
+  title: string;
+  text: string;
+};
+
+// New type for sector categories
+type SectorCategory = {
   id: string;
   text: string;
 };
@@ -45,7 +53,7 @@ type Project = {
 };
 
 // Update the sector categories definition
-const sector_categories: Categories[] = [
+const sector_categories: SectorCategory[] = [
   { id: "all", text: "All" },
   { id: "3", text: "Railway" },
   { id: "4", text: "Oil & Gas" },
@@ -107,7 +115,8 @@ const Portfolio = () => {
           "slug": slug.current,
           categories[]->{
             _id,
-            title
+            title,
+            text
           }
         }`;
         const data = await client1.fetch(query);
@@ -134,13 +143,13 @@ const Portfolio = () => {
 
           if (groupedCategory) {
             // If it's a grouped category, check if the category title is in the includes array
-            return groupedCategory.includes.includes(cat.text);
+            return groupedCategory.includes.includes(cat.title);
           } else {
             // For non-grouped categories, use the original logic
             const sectorCategory = sector_categories.find(
               (sc) => sc.id === activeSector
             );
-            return sectorCategory && cat.text === sectorCategory.text;
+            return sectorCategory && cat.title === sectorCategory.text;
           }
         })
       );
@@ -184,12 +193,12 @@ const Portfolio = () => {
 
           <div className="flex flex-col md:flex-row gap-8">
             {/* Left Sidebar */}
-            <div className="md:w-72 w-full">
-              <div className="bg-white rounded-xl shadow-md border border-gray-100 md:sticky md:top-24 overflow-hidden">
-                <div className="p-5 border-b border-gray-100 bg-[#211574] text-white">
-                  <h2 className="text-lg font-semibold">Industry Sectors</h2>
+            <div className="md:w-72 w-full md:sticky">
+              <div className="bg-white rounded-xl shadow-md border border-gray-100 md:sticky md:top-24 overflow-hidden h-fit">
+                <div className="p-3 border-b border-gray-100 bg-[#211574] text-white">
+                  <h2 className="text-lg font-semibold">Categories</h2>
                 </div>
-                <div className="py-3">
+                <div className="py-2">
                   <SidebarProvider>
                     <SidebarMenu>
                       {sector_categories.map((category) => (
@@ -197,7 +206,7 @@ const Portfolio = () => {
                           <SidebarMenuButton
                             isActive={activeSector === category.id}
                             onClick={() => setActiveSector(category.id)}
-                            className={`w-full justify-start px-5 py-3 transition-all duration-300 text-left ${
+                            className={`w-full justify-start px-4 py-2 transition-all duration-300 text-left ${
                               activeSector === category.id
                                 ? "text-[#211574] font-medium bg-indigo-50"
                                 : "text-gray-600 hover:text-[#211574] hover:bg-gray-50"
@@ -267,7 +276,7 @@ const Portfolio = () => {
                                           fontWeight: "500",
                                         }}
                                       >
-                                        {category.text}
+                                        {category.title}
                                       </span>
                                     ))}
                               </div>

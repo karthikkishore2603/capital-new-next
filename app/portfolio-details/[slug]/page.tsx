@@ -145,7 +145,7 @@ export default async function PortfolioDetail({
                     <p className="font-medium">{project.scopeOfWork}</p>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <p className="text-sm text-gray-500">Project Status</p>
                     <p className="font-medium">{project.projectStatus}</p>
                   </div>
@@ -153,7 +153,7 @@ export default async function PortfolioDetail({
                   <div>
                     <p className="text-sm text-gray-500">Completion</p>
                     <p className="font-medium">{project.completionDate}</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

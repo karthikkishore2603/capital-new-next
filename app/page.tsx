@@ -1,7 +1,7 @@
 "use client";
 // // import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from '@/components/About';
+import About from "@/components/About";
 import ClientLogos from "@/components/ClientLogos";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import SectorsGrid from "@/components/SectorsGrid";
@@ -48,7 +48,7 @@ import Footer from "@/components/Footer";
 
 // export default Index;
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Building from "@/components/Canvas/Building";
 
@@ -64,6 +64,14 @@ const Page = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const prevTopRef = useRef<number>(0);
   const afterRef = useRef<HTMLDivElement>(null);
+  const [currentSection, setCurrentSection] = useState(0);
+  const sections = useRef([
+    { ref: useRef<HTMLDivElement>(null), name: "hero" },
+    { ref: useRef<HTMLDivElement>(null), name: "about" },
+    { ref: useRef<HTMLDivElement>(null), name: "clientLogos" },
+    { ref: useRef<HTMLDivElement>(null), name: "expertise" },
+  ]);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -111,71 +119,141 @@ const Page = () => {
       const bounding = buildingRef.current.getBoundingClientRect();
       const isScrolledUp = prevTopRef.current < bounding.top;
 
-      const isValueChangedFromNegativeToPositive =
-        prevTopRef.current < 0 && bounding.top >= 0;
-      const isValueChangedFromPositiveToNegative =
-        prevTopRef.current > 0 && bounding.top <= 0;
-      if (isScrolledUp && isValueChangedFromNegativeToPositive) {
+      if (isScrolledUp && bounding.top >= 0) {
         setScrolling("up");
-        setState("3d");
+        setState("before-3d");
+        document.body.style.overflow = "auto";
+
+        // Smooth transition to expertise section
+        const expertiseSection = sections.current[3].ref.current;
+        if (expertiseSection) {
+          expertiseSection.scrollIntoView({ behavior: "smooth" });
+        }
       }
-      if (isValueChangedFromPositiveToNegative) {
-        setScrolling("down");
-      }
-      if (prevTopRef.current !== bounding.top) {
-        prevTopRef.current = bounding.top;
-      }
+
+      prevTopRef.current = bounding.top;
     }
-  });
+  }, []);
+
+  // Optimize scroll handler with debounce
+  useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+    const handleScroll = () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      scrollTimeout = setTimeout(() => {
+        if (state === "before-3d") {
+          const viewportHeight = window.innerHeight;
+          const currentScrollPos = window.scrollY;
+
+          // Find the most visible section
+          let maxVisibility = 0;
+          let mostVisibleIndex = currentSection;
+
+          sections.current.forEach((section, index) => {
+            if (section.ref.current) {
+              const rect = section.ref.current.getBoundingClientRect();
+              const visibility =
+                Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+
+              if (visibility > maxVisibility) {
+                maxVisibility = visibility;
+                mostVisibleIndex = index;
+              }
+            }
+          });
+
+          // Only update if section changed
+          if (mostVisibleIndex !== currentSection) {
+            setCurrentSection(mostVisibleIndex);
+            const targetSection =
+              sections.current[mostVisibleIndex].ref.current;
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            }
+          }
+        }
+      }, 50); // Small delay to prevent rapid firing
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
+  }, [state, currentSection]);
+
   return (
     <>
-    <main
-      className={cn(
-        "relative no-scrollbar",
-        state === "3d" ? "overflow-hidden" : "overflow-visible"
-      )}
-      ref={twoDRef}
-    >
-      <Navbar />
-      <div
+      <main
         className={cn(
-          scrollingThreshold == 0 ? "visible h-auto" : "invisible -z-10"
+          "relative no-scrollbar",
+          state === "3d" ? "overflow-hidden" : "overflow-visible"
         )}
+        ref={twoDRef}
       >
-       <Hero /> 
-       <About/>
-        <ClientLogos />
-         
-        <div ref={aboutRef}>
-        <ExpertiseSection />
+        <Navbar />
+        <div
+          className={cn(
+            state === "before-3d" || scrollingThreshold === 0
+              ? "visible h-auto opacity-100"
+              : "invisible -z-10 opacity-0",
+            "transition-all duration-500 ease-in-out"
+          )}
+        >
+          {sections.current.map((section, index) => (
+            <div
+              key={section.name}
+              ref={section.ref}
+              className={cn(
+                "snap-start",
+                index === 2 ? "min-h-[30vh]" : "min-h-screen",
+                index === 2 ? "mb-0" : "mb-0"
+              )}
+            >
+              {index === 0 && <Hero />}
+              {index === 1 && <About />}
+              {index === 2 && (
+                <div className="h-full flex items-center">
+                  <ClientLogos />
+                </div>
+              )}
+              {index === 3 && <ExpertiseSection />}
+            </div>
+          ))}
         </div>
-      </div>
 
-      <div className="">
-        <Building containerRef={buildingRef} canvasRef={canvasRef} />
-      </div>
-      <div
-        ref={afterRef}
-        className={cn(
-          "opacity-100 overflow-visible  transition-all",
-          state === "after-3d"
-            ? "h-auto max-h-auto"
-            : "h-0 max-h-0 overflow-hidden"
-        )}
-      >
-         <SectorsGrid />
-         <ProjectsShowcase />
-         <CapitalAdvantage />
-         <ExperienceCards />
-         <TestimonialsSlider />
-         <LeadershipInsight />
-         <NewsroomTeasers />
-        <FAQSection />
-        <ContactCTA />
-
-      </div>
-      <Footer />
-    </main>
+        <div className="">
+          <Building containerRef={buildingRef} canvasRef={canvasRef} />
+        </div>
+        <div
+          ref={afterRef}
+          className={cn(
+            "opacity-100 overflow-visible  transition-all",
+            state === "after-3d"
+              ? "h-auto max-h-auto"
+              : "h-0 max-h-0 overflow-hidden"
+          )}
+        >
+          <SectorsGrid />
+          <ProjectsShowcase />
+          <CapitalAdvantage />
+          <ExperienceCards />
+          <TestimonialsSlider />
+          <LeadershipInsight />
+          <NewsroomTeasers />
+          <FAQSection />
+          <ContactCTA />
+        </div>
+        <Footer />
+      </main>
     </>
   );
 };

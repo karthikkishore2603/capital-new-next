@@ -15,7 +15,7 @@ const Hero = () => {
     {
       id: 2,
       title: "Our Vision",
-      src: "/hero.webm",
+      src: "/hero1.webm",
     },
     {
       id: 3,

@@ -117,8 +117,8 @@ const ArchitectureLandscape = () => {
                 className="flex flex-col items-center"
               >
                 <Building className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">7,200+</h3>
-                <p className="text-gray-600">Projects</p>
+                <h3 className="text-2xl font-bold">7200+</h3>
+                <p className="text-gray-600">Projects Delivered</p>
               </motion.div>
 
               <motion.div
@@ -129,8 +129,8 @@ const ArchitectureLandscape = () => {
                 className="flex flex-col items-center"
               >
                 <Globe className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">15+</h3>
-                <p className="text-gray-600">Industries Served</p>
+                <h3 className="text-2xl font-bold">20+</h3>
+                <p className="text-gray-600">Years of Experience</p>
               </motion.div>
 
               <motion.div
@@ -141,8 +141,8 @@ const ArchitectureLandscape = () => {
                 className="flex flex-col items-center"
               >
                 <HandshakeIcon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-2xl font-bold">3,000+</h3>
-                <p className="text-gray-600">Clients Globally</p>
+                <h3 className="text-2xl font-bold">500+</h3>
+                <p className="text-gray-600">Expert Engineers</p>
               </motion.div>
             </div>
 
@@ -394,8 +394,8 @@ const ArchitectureLandscape = () => {
 
             <div className="mb-12">
               <p className="text-lg text-center max-w-3xl mx-auto">
-                Trusted by nations, loved by clients. With 7,200+ built
-                environments delivered across 15+ industries, we don't just
+                Trusted by nations, loved by clients. With 7200+ built
+                environments delivered across 10+ industries, we don't just
                 design — we define futures. From Slovenia to Saudi Arabia, from
                 pavilions to mega complexes, Capital EC crafts landmarks that
                 endure.

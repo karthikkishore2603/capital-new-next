@@ -8,6 +8,7 @@
 // import './globals.css';
 
 import "./index.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -19,6 +20,7 @@ export default function RootLayout({
       <head />
       <body>
         <main>{children}</main>
+        <ScrollToTop />
       </body>
     </html>
   );

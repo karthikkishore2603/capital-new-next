@@ -49,12 +49,12 @@ const NewsroomTeasers = () => {
             </Link>
           ))}
         </div>
-        
+{/*         
         <div className="text-center mt-12">
           <Button asChild size="lg">
             <Link href="/newsroom">Visit Newsroom</Link>
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

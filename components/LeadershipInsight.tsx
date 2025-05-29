@@ -79,7 +79,7 @@ const FounderInsights: React.FC = () => {
                     </video>
                     <button
                       onClick={handleClose}
-                      className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition-all"
+                      className="absolute top-4 right-4  bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition-all"
                       aria-label="Close video"
                     >
                       <X size={24} />

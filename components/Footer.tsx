@@ -28,7 +28,7 @@ const Footer = () => {
     <footer className="bg-primary text-white py-16">
       <div className="container">
         {/* Main Content */}
-        <div className="flex flex-col space-y-16">
+        <div className="flex flex-col space-y-16 py-10">
           {/* Top Section */}
           <div>
             <h2 className="text-5xl font-display mb-4">
@@ -57,7 +57,7 @@ const Footer = () => {
                 <Link href="/portfolio" className="hover:opacity-80">
                   PORTFOLIO
                 </Link>
-                <Link href="/leaders" className="hover:opacity-80">
+                <Link href="/leadership" className="hover:opacity-80">
                   CAPITAL LEADERSHIP
                 </Link>
                 <Link href="/contact" className="hover:opacity-80">

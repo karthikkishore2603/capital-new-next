@@ -102,7 +102,7 @@ const ProjectsShowcase = () => {
           </h2>
         </div>
 
-        <Carousel className="w-full" setApi={setApi}>
+        <Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
           <CarouselContent>
             {projects.map((project) => (
               <CarouselItem key={project.id}>
