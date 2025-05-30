@@ -20,12 +20,12 @@ const Hero = () => {
     {
       id: 3,
       title: "Our Vision",
-      src: "/hero.webm",
+      src: "/hero2.webm",
     },
     {
       id: 4,
       title: "Our Vision",
-      src: "/hero.webm",
+      src: "/hero3.webm",
     },
   ];
 
@@ -66,10 +66,11 @@ const Hero = () => {
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mb-8 animate-fade-in text-white">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Your Premier Partner in Engineering & Construction
+              Your Premier Partner in Engineering & Construction
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl">
-            Capital Engineering Consultancy provides innovative design and engineering solutions to meet global construction demands
+              Capital Engineering Consultancy provides innovative design and
+              engineering solutions to meet global construction demands
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button

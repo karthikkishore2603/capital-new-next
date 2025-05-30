@@ -51,7 +51,7 @@ const Leadership = () => {
     {
       name: "Engr. Aman Alqaisy",
       title: "Head of Operations",
-      location: "Sharjah",
+      location: "Sharjah & Ajman",
       category: "executive",
       image: "/team/Engr. Aman Alqaisy - Head of Operations (Sharjah).webp",
     },
@@ -66,7 +66,7 @@ const Leadership = () => {
     {
       name: "Engr. Senthilram Palavesamuthu",
       title: "Head of Operations",
-      location: "Abu Dhabi",
+      location: "Al Ain, UAE",
       category: "executive",
       image:
         "/team/Engr. Senthilram Palavesamuthu - Head of Operations (Abu Dhabi).webp",
@@ -74,7 +74,7 @@ const Leadership = () => {
     {
       name: "Engr. Ravikumar Mahalingam",
       title: "Head of Operations",
-      location: "Ras Al Khaimah",
+      location: "Ras Al Khaimah & Fujairah",
       category: "executive",
       image:
         "/team/Engr. Ravikumar M. - Head of Operations (Ras Al Khaimah) - Copy.JPG",
@@ -90,7 +90,7 @@ const Leadership = () => {
     {
       name: "Engr. Rolan Cabahug Carpi",
       title: "Head of Operations",
-      location: "Ajman",
+      location: "Hamriyah Free Zone & SAIF Zone",
       category: "executive",
       image: "/team/Engr. Rolan Cabahug Carpi - Head of Operations (Ajman).JPG",
     },

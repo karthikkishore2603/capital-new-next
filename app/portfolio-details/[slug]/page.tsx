@@ -7,6 +7,9 @@ import {
   Building,
   MapPin,
   ArrowRight,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,6 +18,7 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { client1 } from "../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
+import ImageGallery from "./ImageGallery";
 
 interface Project {
   title: string;
@@ -73,7 +77,6 @@ export async function generateStaticParams() {
     slug: post.slug,
   }));
 }
-
 
 export default async function PortfolioDetail({
   params,
@@ -162,20 +165,12 @@ export default async function PortfolioDetail({
           {/* Gallery */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {project.gallery.map((image: { asset: { url: string } }, index: number) => (
-                <div
-                  key={index}
-                  className="aspect-video overflow-hidden rounded-lg shadow-sm"
-                >
-                  <img
-                  src={image.asset.url}
-                  alt={`${project.title} - Image ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                ))}
-            </div>
+            <ImageGallery
+              images={project.gallery.map(
+                (image: { asset: { url: string } }) => image.asset.url
+              )}
+              projectTitle={project.title}
+            />
           </div>
         </div>
       </main>

@@ -141,7 +141,7 @@ const Blog = () => {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-[#211574]/10 py-16">
+        <section className="bg-[#211574]/10 py-32">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#211574]">

@@ -62,74 +62,74 @@ const Contact = () => {
               {/* Map Component */}
               <div className="w-full h-full">
                 <WorldMap
-                  scale={400}
-                  center={[55.4209, 25.3463]}
-                  minZoom={200}
-                  maxZoom={800}
-                  showLocationLabels
-                  labelStyle={
-                    {
-                      fontSize: 12,
-                      fontWeight: 500,
-                      fill: "#2563eb",
-                      textShadow: "1px 1px 1px rgba(0,0,0,0.2)",
-                    } as React.CSSProperties
-                  }
-                  locations={[
-                    { name: "Sharjah", coordinates: [55.392, 25.3576] },
-                    { name: "Dubai", coordinates: [55.2708, 25.2048] },
-                    { name: "Abu Dhabi", coordinates: [54.3773, 24.4539] },
-                    { name: "Ras Al Khaimah", coordinates: [55.9754, 25.7869] },
-                    { name: "Ajman", coordinates: [55.4788, 25.4052] },
-                    { name: "Umm Al Quwain", coordinates: [55.5552, 25.5856] },
-                    { name: "Riyadh", coordinates: [46.7219, 24.7136] },
-                    { name: "Muscat", coordinates: [58.4059, 23.588] },
-                    { name: "Cairo", coordinates: [31.2357, 30.0444] },
-                    { name: "Chennai", coordinates: [80.2707, 13.0827] },
-                    { name: "Kerala", coordinates: [76.2711, 10.8505] },
-                  ]}
-                  dots={[
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 25.2048, lng: 55.2708 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 24.4539, lng: 54.3773 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 25.7869, lng: 55.9754 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 25.4052, lng: 55.4788 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 25.5856, lng: 55.5552 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 24.7136, lng: 46.7219 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 23.588, lng: 58.4059 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 30.0444, lng: 31.2357 },
-                    },
-                    {
-                      start: { lat: 25.3576, lng: 55.392 },
-                      end: { lat: 13.0827, lng: 80.2707 },
-                    },
-                    {
-                      start: { lat: 13.0827, lng: 80.2707 },
-                      end: { lat: 10.8505, lng: 76.2711 },
-                    },
-                  ]}
+                  // scale={400}
+                  // center={[55.4209, 25.3463]}
+                  // minZoom={200}
+                  // maxZoom={800}
+                  // showLocationLabels
+                  // labelStyle={
+                  //   {
+                  //     fontSize: 12,
+                  //     fontWeight: 500,
+                  //     fill: "#2563eb",
+                  //     textShadow: "1px 1px 1px rgba(0,0,0,0.2)",
+                  //   } as React.CSSProperties
+                  // }
+                  // locations={[
+                  //   { name: "Sharjah", coordinates: [55.392, 25.3576] },
+                  //   { name: "Dubai", coordinates: [55.2708, 25.2048] },
+                  //   { name: "Abu Dhabi", coordinates: [54.3773, 24.4539] },
+                  //   { name: "Ras Al Khaimah", coordinates: [55.9754, 25.7869] },
+                  //   { name: "Ajman", coordinates: [55.4788, 25.4052] },
+                  //   { name: "Umm Al Quwain", coordinates: [55.5552, 25.5856] },
+                  //   { name: "Riyadh", coordinates: [46.7219, 24.7136] },
+                  //   { name: "Muscat", coordinates: [58.4059, 23.588] },
+                  //   { name: "Cairo", coordinates: [31.2357, 30.0444] },
+                  //   { name: "Chennai", coordinates: [80.2707, 13.0827] },
+                  //   { name: "Kerala", coordinates: [76.2711, 10.8505] },
+                  // ]}
+                  // dots={[
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 25.2048, lng: 55.2708 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 24.4539, lng: 54.3773 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 25.7869, lng: 55.9754 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 25.4052, lng: 55.4788 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 25.5856, lng: 55.5552 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 24.7136, lng: 46.7219 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 23.588, lng: 58.4059 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 30.0444, lng: 31.2357 },
+                  //   },
+                  //   {
+                  //     start: { lat: 25.3576, lng: 55.392 },
+                  //     end: { lat: 13.0827, lng: 80.2707 },
+                  //   },
+                  //   {
+                  //     start: { lat: 13.0827, lng: 80.2707 },
+                  //     end: { lat: 10.8505, lng: 76.2711 },
+                  //   },
+                  // ]}
                 />
               </div>
             </div>
